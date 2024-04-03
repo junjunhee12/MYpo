@@ -26,7 +26,6 @@ function Portfolio(){
                                 <img  className={styles.buddiz} src={buddiz} alt=""/>
                             </div>
                         </div>
-                            <p>이미지를 클릭해보세요</p>
                         <div onClick={() => handlebuddizclick("1")} className={styles.wid2} >
                             <div className={styles.buddiz_container1}>
                                     <img className={styles.FTT} src={FTT} alt=""/>  
