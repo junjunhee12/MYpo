@@ -2,30 +2,56 @@
 /* */
 
 .click_container{
+    width: 100%;
+    height: 100%;
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: #840a84;
+    background-color: #ccc;
     border-radius: 8px;
     padding: 3rem;
-    display: flex;
-    gap: 1rem;
+    /* display: flex; */
+    /* gap: 1rem; */
 }
 
-.click_container > div > img{
+.container_wrap{
+    display: flex;
+    /* flex-direction: column; */
+    width: 100%; 
+    height: 100%;
+    gap: 1rem;
+}
+.click_container > .container_wrap > div > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.click_container > .container_wrap > div > img{
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
-.click_button{
-    position: absolute;
-    right: 50%;
-    top: 93%;
-    width: 100px;
+
+.button{
+    width: 100%;
     height: 30px;
-    background-color: white;
-    border: none;
-    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.click_button{
+    
+    width: 100px;
+    height: 100%;
+}
+
+@media screen and (min-width:500px) and (max-width:1000px) {
+    .container_wrap{
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        margin-bottom: 0.5rem;
+    }
 }

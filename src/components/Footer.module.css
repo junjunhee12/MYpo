@@ -79,3 +79,19 @@ html, body{
     flex-direction: column;
     justify-content: center;
 }
+
+@media screen and (min-width:1100px) and (max-width:1505px) {
+    .ani{
+        line-height: 2.5rem;
+    }
+}
+@media screen and (min-width:790px) and (max-width:1100px) {
+    .ani{
+        line-height: 2rem;
+    }
+}
+@media screen and (min-width:500px) and (max-width:790px) {
+    .ani{
+        line-height: 1.5rem;
+    }
+}

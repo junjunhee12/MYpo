@@ -7,22 +7,25 @@ export function Img1({del1}){
     return(
         <>
             <div className={styles.click_container}>
-                            <div>
-                                <img src={buddiz1}/>
-                            </div>
-                            <div>
-                                <img src={buddiz2}/>
-                            </div>
-                            <div>
-                                <img src={buddiz3}/>
-                            </div>
-                            <div>
-                                <img src={buddiz3}/>
-                            </div>
-                            <div>
-                                <img src={buddiz3}/>
-                            </div>
-                        <div>
+                <div className={styles.container_wrap}>
+                    <div>
+                        <img src={buddiz1}/>
+                    </div>
+                    <div>
+                        <img src={buddiz2}/>
+                    </div>
+                    <div>
+                        <img src={buddiz3}/>
+                    </div>
+                    <div>
+                        <img src={buddiz3}/>
+                    </div>
+                    <div>
+                        <img src={buddiz3}/>
+                    </div>
+                </div>
+                            
+                <div className={styles.button}>
                     <button className={styles.click_button} onClick={del1}>나가기</button>
                 </div>
             </div>
@@ -33,22 +36,25 @@ export function Img2({del1}){
     return(
         <>
             <div className={styles.click_container}>
-                            <div>
-                                <img src={buddiz1}/>
-                            </div>
-                            <div>
-                                <img src={buddiz2}/>
-                            </div>
-                            <div>
-                                <img src={buddiz3}/>
-                            </div>
-                            <div>
-                                <img src={buddiz3}/>
-                            </div>
-                            <div>
-                                <img src={buddiz3}/>
-                            </div>
-                        <div>
+                <div className={styles.container_wrap}>
+                    <div>
+                        <img src={buddiz1}/>
+                    </div>
+                    <div>
+                        <img src={buddiz2}/>
+                    </div>
+                    <div>
+                        <img src={buddiz3}/>
+                    </div>
+                    <div>
+                        <img src={buddiz3}/>
+                    </div>
+                    <div>
+                        <img src={buddiz3}/>
+                    </div>
+                </div>
+                            
+                <div className={styles.button}>
                     <button className={styles.click_button} onClick={del1}>나가기</button>
                 </div>
             </div>
@@ -59,22 +65,25 @@ export function Img3({del1}){
     return(
         <>
             <div className={styles.click_container}>
-                            <div>
-                                <img src={buddiz1}/>
-                            </div>
-                            <div>
-                                <img src={buddiz2}/>
-                            </div>
-                            <div>
-                                <img src={buddiz3}/>
-                            </div>
-                            <div>
-                                <img src={buddiz3}/>
-                            </div>
-                            <div>
-                                <img src={buddiz3}/>
-                            </div>
-                        <div>
+                <div className={styles.container_wrap}>
+                    <div>
+                        <img src={buddiz1}/>
+                    </div>
+                    <div>
+                        <img src={buddiz2}/>
+                    </div>
+                    <div>
+                        <img src={buddiz3}/>
+                    </div>
+                    <div>
+                        <img src={buddiz3}/>
+                    </div>
+                    <div>
+                        <img src={buddiz3}/>
+                    </div>
+                </div>
+                            
+                <div className={styles.button}>
                     <button className={styles.click_button} onClick={del1}>나가기</button>
                 </div>
             </div>
