@@ -34,6 +34,7 @@
     width: 50%;
     height: 682px;
     object-fit: cover;
+    cursor: pointer;
 }
 .left > img{
     width: 600px;
@@ -52,12 +53,31 @@
     align-self: center;
     margin: 1rem 3rem 1rem 1rem;
     box-shadow: 5px 5px 8px 8px gray;
+    /* padding: 1rem; */
 }
 
 .buttonDel{
     display: none;
 }
-
+.header_1{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.right_wrap_header{
+    padding: 1rem;
+}
+.right_wrap_main{
+    padding: 1rem;
+}
+.right_wrap_footer{
+    padding: 1rem;
+}
+.padding{
+    padding-bottom: 1rem;
+}
 @media screen and (min-width:500px) and (max-width:1390px) {
     .container{
         width: 100%;

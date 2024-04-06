@@ -56,9 +56,10 @@
 
 .left_wrap_right{
     width: 500px;
+    height: 820.11px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: start;
     /* padding: 1rem; */
 }

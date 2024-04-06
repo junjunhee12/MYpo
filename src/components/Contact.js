@@ -47,7 +47,7 @@ function Contact(){
             <section className={styles.contact}>
                 <div className={styles.container}>
                     <div className={styles.title}>
-                        <h4>CONTACT</h4>
+                        <h4>CONTACT (제작중 입니다....)</h4>
                         <div className={styles.email}>
                             <h2>Contact With Me</h2>
                             <span>전준희에게 Email보내기</span>
