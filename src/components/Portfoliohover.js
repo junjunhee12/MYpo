@@ -180,7 +180,7 @@ function Portfoliohover({setBuddizClick, buddizClick}) {
                             </p>
                             <p>
                                 <strong className={styles.padding}>github</strong>
-                                <div><a href="https://github.com/junjunhee12/MYpo">https://github.com/junjunhee12/MYpo</a></div>
+                                <div><a href="https://myportfolio-brown-psi.vercel.app/portfolio">https://myportfolio-brown-psi.vercel.app/portfolio</a></div>
                             </p>
                         </header>
                         <main className={styles.right_wrap_main}>
