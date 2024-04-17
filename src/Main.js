@@ -17,7 +17,7 @@ function Main(){
                         <Route path="about" element={<AboutMe />}/>
                         <Route path="features" element={<Features />}/>
                         <Route path="portfolio" element={<Portfolio />}/>
-                        <Route path="contact" element={<Contact />}/>
+                        {/* <Route path="contact" element={<Contact />}/> */}
                     </Route>
                 </Routes>
             </BrowserRouter>

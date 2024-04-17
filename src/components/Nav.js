@@ -48,15 +48,13 @@ function Nav({nav}){
                                 <button onClick={onClickPortfolio} className={` ${  portfolio ? styles.header_container_portfolio: styles.navbtn}`}>Portfolio</button>
                             </Link>
                         </li>
-                        <li>
-                            {/* {nav ? (<NavLink to={"contact"}>
-                                <button onClick={onClick2} className={nav ? styles.navbtn :styles.navbtn}>Contact</button>
-                            </NavLink>) : (<button className={nav ? styles.navbtn :styles.navbtn}>Contact</button>)} */}
+                        {/* <li>
+                            
                             <Link to={"contact"}>
-                                {/* <button onClick={onClickContact} className={ (nav && contact ) ? styles.header_container_contact :styles.navbtn}>Contact</button> */}
+                               
                                 <button onClick={onClickContact} className={` ${contact ? styles.header_container_contact : styles.navbtn}`}>Contact</button>
                             </Link>
-                        </li>
+                        </li> */}
                     </ul>
                 </nav>
             {/* </div> */}

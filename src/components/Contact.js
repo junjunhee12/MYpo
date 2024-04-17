@@ -1,49 +1,50 @@
 import Container from "./Container";
-import styles from "./Contact.module.css"
-import emailjs from '@emailjs/browser';
-import { useEffect } from "react";
-import { useRef } from "react";
+import styles from "./Contact.module.css";
+import emailjs from 'emailjs-com';
 import { useState } from "react";
-function Contact(){
-    useEffect(() => {
-        emailjs.init()
-    }, [])
+function Contact() {
+    const [email, setEmail] = useState('');
+    const [name, setName] = useState('');
+    const [message, setMessage] = useState('');
 
-    const [email, setEmail] = useState()
-    const [name, setName] = useState()
-    const [message, setMessage] = useState()
-    const [ckeck, setCkeck] = useState(false)
+    const emailchange = (e) => {
+        setEmail(e.target.value);
+    };
 
-    const emailchange = (e) =>{
-        setEmail(e.target.value)
-        setCkeck(true)
-    }
-    console.log(email);
-    const namechange = (e) =>{
-        setName(e.target.value)
-    }
-    const messagechange = (e) =>{
-        setMessage(e.target.value)
-        setCkeck(true)
-    }
-  
-    
-    const form = useRef();
+    const namechange = (e) => {
+        setName(e.target.value);
+    };
+
+    const messagechange = (e) => {
+        setMessage(e.target.value);
+    };
+
     const sendEmail = (e) => {
-    e.preventDefault();
-    console.log(e.currentTarget);
-    emailjs.sendForm('service_0dpv9vl', 'template_qyug0qe', form.current, 'E1aULCiLWko3BMO7e')
-    .then(() => {
-        console.log('성공');
-        window.alert("이메일이 성공적으로 보내졌습니다.")
-    }, (error) => {
-        window.alert("이메일을 보내는데 실패하였습니다.")
-        console.log(error.text);
-    })
-}
-    return(
-        <>
-         <Container>
+        e.preventDefault();
+
+        const templateParams = {
+            name: name,
+            email: email,
+            message: message
+        };
+
+        emailjs.send('service_0dpv9vl', 'template_qyug0qe', templateParams, 'E1aULCiLWko3BMO7e')
+            .then(() => {
+                console.log('이메일 전송 성공');
+                alert("이메일이 성공적으로 보내졌습니다.");
+            }, (error) => {
+                console.error('이메일 전송 실패:', error);
+                alert("이메일을 보내는데 실패하였습니다.");
+            });
+
+        // 폼 초기화
+        setName('');
+        setEmail('');
+        setMessage('');
+    };
+
+    return (
+        <Container>
             <section className={styles.contact}>
                 <div className={styles.container}>
                     <div className={styles.title}>
@@ -57,69 +58,62 @@ function Contact(){
                         <div className={styles.left}>
                             <div className={styles.card}>
                                 <div className={styles.icon1}>
-                                        <i className={styles.fa_solid1}>중요!</i>
+                                    <i className={styles.fa_solid1}>중요!</i>
                                 </div>
-                                    <div className={styles.info_text1}>
-                                        <p>이름을 적어주세요!</p>
-                                        <p>이메일을 적어주세요!</p>
-                                        <p>보낼 내용을 적어주세요!</p>
-                                    </div>
-                                    </div>
-                            <div className={styles.card}>
-                                <div className={styles.icon}>
-                                        <i className={styles.fa_solid}>이미지</i>
-                                </div>
-                                    <div className={styles.info_text}>
-                                        <h3>phone</h3>
-                                        <p>010-1234-5678</p>
-                                    </div>
-                                    </div>
-
-                                <div className={styles.card}>
-                                    <div className={styles.icon}>
-                                        <i className={styles.fa_solid}>이미지</i>
-                                    </div>
-                                    <div className={styles.info_text}>
-                                        <h3>email</h3>
-                                        <p>wwg0328@naver.com</p>
-                                    </div>
-                                </div>
-
-                                <div className={styles.card}>
-                                    <div className={styles.icon}>
-                                        <i className={styles.fa_solid}>이미지</i>
-                                    </div>
-                                    <div className={styles.info_text}>
-                                        <h3>address</h3>
-                                        <p>대전광역시 동구 가오동</p>
-                                    </div>
+                                <div className={styles.info_text1}>
+                                    <p>이름을 적어주세요!</p>
+                                    <p>이메일을 적어주세요!</p>
+                                    <p>보낼 내용을 적어주세요!</p>
                                 </div>
                             </div>
-                            
-                            <div className={styles.right}>
-                                <form ref={form} onSubmit={sendEmail} className={styles.card2}>
-                                    <div className={styles.form_group}>
-                                        <label for="name">name</label>
-                                        <input onChange={namechange} name="from_name" type="text" id="name" value={ name} placeholder="작성자의 이름이나 회사명을 적어주세요" />
-                                    </div>
-                                    <div className={styles.form_group}>
-                                        <label for="email">email</label>
-                                        <input onChange={emailchange} name="from_email" type="email" id="email" value={email} autocomplete="off" placeholder="작성자의 이메일을 작성해주세요"/>
-                                    </div>
-                                    <div className={styles.form_group}>
-                                        <label for="msg">contents</label>
-                                        <textarea onChange={messagechange} name="message" id="msg" value={message} placeholder="전준희에게 보낼 내용을 작성해주시면 됩니다."></textarea>
-                                    </div>
-                                    <button type="submit" className={styles.send}>send</button>
-                                </form>
-                            </div>
+                            {/* 나머지 코드는 그대로 사용 */}
                         </div>
-                        
+                        <div className={styles.right}>
+                            <form onSubmit={sendEmail} className={styles.card2}>
+                                <div className={styles.form_group}>
+                                    <label htmlFor="name">Name</label>
+                                    <input
+                                        onChange={namechange}
+                                        value={name}
+                                        name="name"
+                                        type="text"
+                                        id="name"
+                                        placeholder="작성자의 이름이나 회사명을 적어주세요"
+                                        required
+                                    />
+                                </div>
+                                <div className={styles.form_group}>
+                                    <label htmlFor="email">Email</label>
+                                    <input
+                                        onChange={emailchange}
+                                        value={email}
+                                        name="email"
+                                        type="email"
+                                        id="email"
+                                        autoComplete="off"
+                                        placeholder="작성자의 이메일을 작성해주세요"
+                                        required
+                                    />
+                                </div>
+                                <div className={styles.form_group}>
+                                    <label htmlFor="msg">Contents</label>
+                                    <textarea
+                                        onChange={messagechange}
+                                        value={message}
+                                        name="message"
+                                        id="msg"
+                                        placeholder="전준희에게 보낼 내용을 작성해주시면 됩니다."
+                                        required
+                                    ></textarea>
+                                </div>
+                                <button type="submit" className={styles.send}>Send</button>
+                            </form>
+                        </div>
                     </div>
+                </div>
             </section>
-         </Container>
-        </>
-    )
+        </Container>
+    );
 }
 
 export default Contact;
