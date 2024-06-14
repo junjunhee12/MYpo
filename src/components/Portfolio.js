@@ -83,6 +83,7 @@ const Portfoliocontent = styled.div`
     background-color: #eee;
     margin: 0 auto;
     display: flex;
+    border-radius: 16px;
     @media (max-width: 1735px) {
         height: 100vh;
         flex-direction: column;
@@ -141,10 +142,10 @@ const swiperimg = [
     [애경1, 애경2, 애경3]
 ]
 
-const palce = ["Buddiz","FTT","Portfolio","로미지안 사이트", " 애경 사이트"]
+const palce = ["Buddiz","FTT","Portfolio","로미지안 퍼블리싱", " 애경 퍼블리싱"]
 const palce1 = ["/Team","/Team","/Solo","/Solo", " /Solo"]
 const palce2 = ["배포","github","개발담당","stack"]
-const palce3 = ["https://junjunhee12.github.io/Buddiz/","https://jeonsunam.github.io/Project1_FTT/","https://vercel.com/junjunhee12s-projects/myportfolio","https://mywebsite-chi-murex.vercel.app/","https://aekyung-publishing.vercel.app/"]
+const palce3 = ["https://junjunhee12.github.io/Buddiz/","https://jeonsunam.github.io/Project1_FTT/","https://myportfolio-brown-psi.vercel.app/","https://mywebsite-chi-murex.vercel.app/","https://aekyung-publishing.vercel.app/"]
 const palce4 = ["https://github.com/junjunhee12/Buddiz","https://github.com/RH603/FTT","https://github.com/junjunhee12/MYpo","https://github.com/junjunhee12/Web/tree/main/src","https://github.com/junjunhee12/Aekyung-Publishing"]
 const palce5 = ["회원가입, 로그인, 로그아웃, 비밀번호 변경, 비밀번호 찾기","레이아웃, 검색","ALL","ALL","ALL"]
 const palce6 = ["React, styles, styeld-components, Firebase, Figma","Html, Css, Javascript","React, styeld-components, Swiper /반응형","React, styeld-components, Swiper","React, styeld-components, Swiper /반응형"]
