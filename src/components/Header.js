@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 import { Container, H1, H3, P, Smallp } from "./Home";
+import { FaArrowUp } from 'react-icons/fa';
 // 공통 스타일 정의
 
 const TextboxwrapStyle = css`
@@ -30,7 +31,7 @@ const Headh3 = styled.h3`
     z-index: 999;
     transition: all 0.5s linear;
     color: ${(props) => (props.hover ? "white" : "black")};
-    padding-left: 12px;
+    padding-left: ${(props) => (props.height ? "0px" : "12px")};
     font-size: 30px;
     font-weight: bold;
     
@@ -108,6 +109,7 @@ const Textboxwrap = styled.div`
     justify-content: space-between;
     align-items: end;
     position: relative;
+    /* position: fixed; */
     overflow: hidden;
     @media (max-width: 1735px) {
         width: 100%;
@@ -120,10 +122,21 @@ const Textboxwrap = styled.div`
 
 const TextboxwrapHome = styled.div`
     ${TextboxwrapStyle}
-    width: 100%;
-    height: 100px;
+    /* width: 100%; */
+    width: ${(props) => (props.height ? "50px" : "100%")};
+    height: ${(props) => (props.height ? "50px" : "100px")};
+    position:  ${(props) => (props.height ? "fixed" : "")};
+    bottom:${(props) => (props.height ? "30px" : "")} ;
+    right:${(props) => (props.height ? "30px" : "")} ;
+    transition: all 0.5s linear;
+    display: flex;
+    justify-content: ${(props) => (props.height ? "center" : "")};
+    align-items: ${(props) => (props.height ? "center" : "")};
+    &:hover{
+        background-color: ${(props) => (props.height ? "black" : "")};
+    }
     @media (max-width: 1735px) {
-        height: 80px;
+        height: ${(props) => (props.height ? "50px" : "80px")};
     }   
     @media (max-width :499px) {
         height: 50px;
@@ -131,6 +144,7 @@ const TextboxwrapHome = styled.div`
 `;
 const HomeDiv = styled.div`
     ${boxdiv}
+    display: ${(props) => (props.height ? "none" : "")};
     left: ${(props) => (props.hover ? "0" : "100%")};
 `;
 
@@ -205,6 +219,7 @@ function Head() {
     const [hoverEd, setHoverEd] = useState(false);
     const [hoverPo, setHoverPo] = useState(false);
     const [hoverFi, setHoverFi] = useState(false);
+    const [height, setHeight] = useState(false)
 
     const onMouseEnter = (setHover) => {
         setHover(true);
@@ -213,7 +228,32 @@ function Head() {
     const onMouseLeave = (setHover) => {
         setHover(false);
     };
+    const handleClick = (setHover, position) => {
+        setHover(true);
+        window.scrollTo({
+            top: position,
+            behavior: 'smooth',
+        });
+    };
+    useEffect(()=>{
+        const scroll = ()=>{
+            const scroll = window.scrollY;
+            console.log("scroll", scroll);
+            if(scroll){
+                setHeight(true)
+            }else{
+                setHeight(false)
+            }
+        }
 
+        window.addEventListener("scroll", scroll);
+        return () => {
+            window.removeEventListener("scroll", scroll);
+        };
+    },[])
+
+    const scroll =window.screenY
+    console.log(scroll);
     return (
             <Header>
                 <Tawon>
@@ -237,15 +277,18 @@ function Head() {
                 <Textbox>
                     <Textboxwrap>
                         <TextboxwrapHome
+                            height={height}
                             onMouseEnter={() => onMouseEnter(setHoverHome)}
                             onMouseLeave={() => onMouseLeave(setHoverHome)}
+                            onClick={() => handleClick(setHoverAbout,0)}
                         >
-                            <Headh3 hover={hoverHome}>Home</Headh3>
-                            <HomeDiv hover={hoverHome}></HomeDiv>
+                            <Headh3 height={height} hover={hoverHome}>{height ? <FaArrowUp /> : "Home" }</Headh3>
+                            <HomeDiv height={height} hover={hoverHome}></HomeDiv>
                         </TextboxwrapHome>
                         <TextboxwrapAbout
                             onMouseEnter={() => onMouseEnter(setHoverAbout)}
                             onMouseLeave={() => onMouseLeave(setHoverAbout)}
+                            onClick={() => handleClick(setHoverAbout,950)}
                         >
                             <Headh3 hover={hoverAbout}>About Me</Headh3>
                             <AboutDiv hover={hoverAbout}></AboutDiv>
@@ -253,6 +296,7 @@ function Head() {
                         <TextboxwrapEd
                             onMouseEnter={() => onMouseEnter(setHoverEd)}
                             onMouseLeave={() => onMouseLeave(setHoverEd)}
+                            onClick={() => handleClick(setHoverPo,1880)}
                         >
                             <Headh3 hover={hoverEd}>Education</Headh3>
                             <EdDiv hover={hoverEd}></EdDiv>
@@ -260,6 +304,7 @@ function Head() {
                         <TextboxwrapPo
                             onMouseEnter={() => onMouseEnter(setHoverPo)}
                             onMouseLeave={() => onMouseLeave(setHoverPo)}
+                            onClick={() => handleClick(setHoverPo,2850)}
                         >
                             <Headh3 hover={hoverPo}>Portfolio</Headh3>
                             <PoDiv hover={hoverPo}></PoDiv>
@@ -267,6 +312,7 @@ function Head() {
                         <TextboxwrapFi
                             onMouseEnter={() => onMouseEnter(setHoverFi)}
                             onMouseLeave={() => onMouseLeave(setHoverFi)}
+                            onClick={() => handleClick(setHoverPo,6275)}
                         >
                             <Headh3 hover={hoverFi}>Figma</Headh3>
                             <FiDiv hover={hoverFi}></FiDiv>
