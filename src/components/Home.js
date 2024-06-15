@@ -33,6 +33,7 @@ export const Div = styled.div`
 export const Container = styled.div`
     width: 100%;
     height: 100%;
+    background-color: white;
 `;
 
 export const H1 = styled.h1`
