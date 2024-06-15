@@ -1,3 +1,4 @@
+import React from 'react';
 import FTT1 from "../assets/ftt1.jpg"
 import FTT2 from "../assets/ftt2.jpg"
 import FTT3 from "../assets/ftt3.jpg"
