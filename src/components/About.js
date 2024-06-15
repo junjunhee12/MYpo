@@ -49,6 +49,11 @@ export const Aboutmecontent = styled.div`
     /* background-color: yellowgreen; */
     margin: 0 auto;
     display: flex;
+    @media (max-width: 1735px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }   
 `
 const Aboutleft = styled.div`
     width: 50%;
@@ -57,6 +62,11 @@ const Aboutleft = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    @media (max-width: 1735px) {
+        width: 100%;
+        /* flex-direction: row; */
+        align-items: center;
+    }   
 `
 const Aboutright = styled.div`
     width: 50%;
@@ -65,6 +75,9 @@ const Aboutright = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    @media (max-width: 1735px) {
+        width: 100%;
+    }   
 `
 
 const Rightbox = styled.div`
@@ -93,6 +106,11 @@ const Notcolor = styled.div`
     position: relative;
     overflow: hidden;
     border-radius: 99px;
+    @media (max-width: 1735px) {
+        width: 300px;
+        height: 40px;
+
+    }   
 `
 const Rightcolor = styled.div`
     width: 90%;
@@ -105,6 +123,11 @@ const Rightcolor = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: 1735px) {
+        width: 90%;
+        height: 40px;
+        
+    }   
 `
 const Rightcolor1 = styled.div`
     width: 85%;
@@ -117,6 +140,11 @@ const Rightcolor1 = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 99px;
+    @media (max-width: 1735px) {
+        width: 85%;
+        height: 40px;
+        
+    }   
 `
 const Rightcolor2 = styled.div`
     width: 80%;
@@ -129,6 +157,11 @@ const Rightcolor2 = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 99px;
+    @media (max-width: 1735px) {
+        width: 80%;
+        height: 40px;
+        
+    }   
 `
 const Rightcolor3 = styled.div`
     width: 75%;
@@ -141,6 +174,11 @@ const Rightcolor3 = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 99px;
+    @media (max-width: 1735px) {
+        width: 75;
+        height: 40px;
+        
+    }   
 `
 const Rightcolor4 = styled.div`
     width: 40%;
@@ -153,6 +191,11 @@ const Rightcolor4 = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 99px;
+    @media (max-width: 1735px) {
+        width: 40;
+        height: 40px;
+        
+    }   
 `
 const Rightcolor5 = styled.div`
     width: 55%;
@@ -165,6 +208,11 @@ const Rightcolor5 = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 99px;
+    @media (max-width: 1735px) {
+        width: 55;
+        height: 40px;
+        
+    }   
 `
 const Rightcolor6 = styled.div`
     width: 30%;
@@ -177,6 +225,11 @@ const Rightcolor6 = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 99px;
+    @media (max-width: 1735px) {
+        width: 30%;
+        height: 40px;
+        
+    }   
 `
 
 function About() {

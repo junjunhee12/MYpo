@@ -4,6 +4,7 @@ import Head from './Header';
 import About, { Img } from './About';
 import Education from './Education';
 import Portfol from './Portfolio';
+import Figma from './Figma';
 // 공통 부분 --------------------------------------------
 export const Flex = styled.div`
     display: flex;
@@ -100,7 +101,7 @@ function Home() {
             <About />
             <Education />
             <Portfol />
-            <About />
+            <Figma />
         </Container>
     );
 }

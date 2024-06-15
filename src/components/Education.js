@@ -14,6 +14,10 @@ const EducationContent = styled(Aboutmecontent)`
     /* background-color: yellow; */
     justify-content: space-between;
     align-items: center;
+    @media (max-width: 1735px) {
+        height: 100vh;
+    }   
+        padding: 1rem 0;
 `
 const EducationTitleTob = styled(TitleTob)`
     justify-content: space-between;
@@ -28,6 +32,10 @@ const EducationImg = styled.div`
     /* background-color: yellowgreen; */
     border-radius: 16px;
     overflow: hidden;
+    @media (max-width: 1735px) {
+        width: 300px;
+        /* height: 650px; */
+    }   
 `
 
 const TitleTobcontent = styled.div`
@@ -49,7 +57,10 @@ const ContentRight = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-
+    @media (max-width: 1735px) {
+        width: 300px;
+        height: 300px;
+    }   
 `
 
 const EdImg = styled.div`

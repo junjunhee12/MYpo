@@ -76,6 +76,9 @@ const PortfolioBottom = styled.div`
     align-items: center;
     padding-right: 12px;
     border-top: 1px solid black;
+    @media (max-width: 499px) {
+        height: 50px;
+    }   
 `
 const Portfoliocontent = styled.div`
     width: 100%;
