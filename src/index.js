@@ -8,9 +8,7 @@ import { PrContentProvider } from './contexts/prContent';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <PrContentProvider defaultValue={"ko"}>
       <Main />
-    </PrContentProvider>
   </React.StrictMode>
 );
 
