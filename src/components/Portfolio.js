@@ -224,7 +224,7 @@ function Portfol(){
                                             </Alink>
                                         )}
                                         {index1 === 1 && (
-                                            <Alink href={palce3[index]}>
+                                            <Alink href={palce4[index]}>
                                                 <Portfoliop>{palce4[index]}</Portfoliop>
                                             </Alink>
                                         )}
