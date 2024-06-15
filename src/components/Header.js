@@ -23,6 +23,7 @@ const boxdiv = css`
     }   
     @media (max-width :499px) {
         height: 50px;
+        display: none;
     } 
 `;
 
@@ -38,6 +39,9 @@ const Headh3 = styled.h3`
     @media (max-width: 1735px) {
         font-size: 15px;
     }   
+    @media (max-width :499px) {
+        color:${(props) => (props.height ? "white" : "black")};
+    } 
 `
 // -----------------------------------------
 const Header = styled.div`
@@ -116,6 +120,7 @@ const Textboxwrap = styled.div`
         height: 100%;
         padding: 1rem 0;
     }   
+    
 `;
 
 
@@ -163,6 +168,10 @@ const TextboxwrapAbout = styled.div`
 const AboutDiv = styled.div`
     ${boxdiv}
     left: ${(props) => (props.hover ? "5%" : "100%")};
+    /* @media (max-width :499px) {
+        
+        display: none;
+    }  */
 `;
 
 
@@ -228,8 +237,9 @@ function Head() {
     const onMouseLeave = (setHover) => {
         setHover(false);
     };
-    const handleClick = (setHover, position) => {
+    const handleClick = (setHover, positionDesktop, positionMobile) => {
         setHover(true);
+        const position = window.innerWidth <= 499 ? positionMobile : positionDesktop;
         window.scrollTo({
             top: position,
             behavior: 'smooth',
@@ -280,7 +290,7 @@ function Head() {
                             height={height}
                             onMouseEnter={() => onMouseEnter(setHoverHome)}
                             onMouseLeave={() => onMouseLeave(setHoverHome)}
-                            onClick={() => handleClick(setHoverAbout,0)}
+                            onClick={() => handleClick(setHoverAbout,0,0)}
                         >
                             <Headh3 height={height} hover={hoverHome}>{height ? <FaArrowUp /> : "Home" }</Headh3>
                             <HomeDiv height={height} hover={hoverHome}></HomeDiv>
@@ -288,7 +298,7 @@ function Head() {
                         <TextboxwrapAbout
                             onMouseEnter={() => onMouseEnter(setHoverAbout)}
                             onMouseLeave={() => onMouseLeave(setHoverAbout)}
-                            onClick={() => handleClick(setHoverAbout,950)}
+                            onClick={() => handleClick(setHoverAbout,950,667)}
                         >
                             <Headh3 hover={hoverAbout}>About Me</Headh3>
                             <AboutDiv hover={hoverAbout}></AboutDiv>
@@ -296,7 +306,7 @@ function Head() {
                         <TextboxwrapEd
                             onMouseEnter={() => onMouseEnter(setHoverEd)}
                             onMouseLeave={() => onMouseLeave(setHoverEd)}
-                            onClick={() => handleClick(setHoverPo,1880)}
+                            onClick={() => handleClick(setHoverPo,1880,1287)}
                         >
                             <Headh3 hover={hoverEd}>Education</Headh3>
                             <EdDiv hover={hoverEd}></EdDiv>
@@ -304,7 +314,7 @@ function Head() {
                         <TextboxwrapPo
                             onMouseEnter={() => onMouseEnter(setHoverPo)}
                             onMouseLeave={() => onMouseLeave(setHoverPo)}
-                            onClick={() => handleClick(setHoverPo,2850)}
+                            onClick={() => handleClick(setHoverPo,2850,2024)}
                         >
                             <Headh3 hover={hoverPo}>Portfolio</Headh3>
                             <PoDiv hover={hoverPo}></PoDiv>
@@ -312,7 +322,7 @@ function Head() {
                         <TextboxwrapFi
                             onMouseEnter={() => onMouseEnter(setHoverFi)}
                             onMouseLeave={() => onMouseLeave(setHoverFi)}
-                            onClick={() => handleClick(setHoverPo,6275)}
+                            onClick={() => handleClick(setHoverPo,6275,5716)}
                         >
                             <Headh3 hover={hoverFi}>Figma</Headh3>
                             <FiDiv hover={hoverFi}></FiDiv>
