@@ -152,7 +152,7 @@ const palce2 = ["배포","github","개발담당","stack"]
 const palce3 = ["https://junjunhee12.github.io/Buddiz/","https://jeonsunam.github.io/Project1_FTT/","https://myportfolio-brown-psi.vercel.app/","https://mywebsite-chi-murex.vercel.app/","https://aekyung-publishing.vercel.app/"]
 const palce4 = ["https://github.com/junjunhee12/Buddiz","https://github.com/RH603/FTT","https://github.com/junjunhee12/MYpo","https://github.com/junjunhee12/Web/tree/main/src","https://github.com/junjunhee12/Aekyung-Publishing"]
 const palce5 = ["회원가입, 로그인, 로그아웃, 비밀번호 변경, 비밀번호 찾기","레이아웃, 검색","ALL","ALL","ALL"]
-const palce6 = ["React, styles, styeld-components, Firebase, Figma","Html, Css, Javascript","React, styeld-components, Swiper /반응형","React, styeld-components, Swiper","React, styeld-components, Swiper /반응형"]
+const palce6 = ["React, styles, styeld-components, Firebase, Figma","Html, Css, Javascript","React, styeld-components, Swiper /모바일","React, styeld-components, Swiper","React, styeld-components, Swiper /모바일"]
 const palce7 = [
     "다양한 매체에 운동하는 영상이 많이 나오고 있습니다. 그로 인해 사람들이 운동에 대해 관심이 생겨서 많은 사람들이 운동을 하려고 시도하고는 있으나 막상 어떻게 해야될지도 모릅니다. 또한 내 주위에는 운동하는 친구들이 없어서 같이 운동도 하고 소통할 수 있는 페이지를 제작해 보았습니다.",
     "교육기관에서의 첫 프로젝트였습니다. 현재까지 배운것을 완벽하게 이해하지도 못했으며 레이아웃도 힘들어서 OTT사이트를 만들면서 복습하는 생각으로 만들었습니다.",
